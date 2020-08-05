@@ -5,7 +5,7 @@ export async function up(knex: Knex) {      // Quais atualizações a realizar
         table.increments('id').primary();
 
         table.timestamp('created_at')
-            .defaultTo('now()')
+            .defaultTo(knex.raw('CURRENT_TIMESTAMP'))
             .notNullable();
 
         table.integer('user_id')
