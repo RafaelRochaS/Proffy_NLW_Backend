@@ -105,3 +105,4 @@ dist
 
 # SQLite
 .sqlite
+src/database/database.sqlite
