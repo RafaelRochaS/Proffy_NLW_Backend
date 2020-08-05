@@ -6,6 +6,7 @@ Backend do Projeto Proffy da Next Level Week da Rocketseat
 ## Conexões
 
 - Rota para listar o total de conexões realizadas;
+- Rota para criar uma nova conexão;
 
 
 ## Aula
