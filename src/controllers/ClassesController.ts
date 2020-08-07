@@ -69,7 +69,7 @@ export default class ClassesController{
                 subject,
                 cost,
                 user_id
-            })
+            });
         
             const class_id = inserted_classes_id[0];
         
@@ -80,7 +80,7 @@ export default class ClassesController{
                     from: convert_hour_to_minutes(schedule_item.from),
                     to: convert_hour_to_minutes(schedule_item.to)
                 };
-            })
+            });
         
             await trx('class_schedule').insert(class_schedule);
         
@@ -92,8 +92,8 @@ export default class ClassesController{
             console.log(err)
             return response.status(400).json({
                 error: 'Unexpected error while creating new class'
-            })
-        }
+            });
+        };
     
     }
 }
