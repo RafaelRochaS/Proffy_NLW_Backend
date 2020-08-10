@@ -18,9 +18,12 @@ jobs:
       - run:
           name: Validate dependencies
           command: yarn list
+      #- run:
+      #    name: Run lint
+      #    command: yarn lint .
       - run:
-          name: Run lint
-          command: yarn lint .
+          name: Run tests
+          command: yarn test
 
 workflows:
   static-testing:
