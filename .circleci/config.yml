@@ -1,9 +1,20 @@
 version: 2.1
 
 jobs:
-  build:
+  build-test:  # If more build steps are required, add the here
     docker:
       - image: circleci/node:10.19.0
     steps:
       - checkout
-      - run: echo "circleci test"
+      - run:
+        name: Get yarn for packet management
+        command: sudo apt install yarn -y
+      - run:
+        command: yarn -v
+
+
+
+workflows:
+  static-testing:
+    jobs:
+      - build-test
