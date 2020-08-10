@@ -12,8 +12,12 @@ jobs:
       - run:
           name: Test yarn
           command: yarn -v
-
-
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - run:
+          name: Validate dependencies
+          command: yarn list
 
 workflows:
   static-testing:
