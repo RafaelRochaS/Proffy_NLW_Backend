@@ -1,22 +1,22 @@
-import Knex from 'knex';
+import Knex from "knex";
 
 export async function up(knex: Knex) {      // Quais atualizações a realizar
-    return knex.schema.createTable('connections', table => {
-        table.increments('id').primary();
+    return knex.schema.createTable("connections", table => {
+        table.increments("id").primary();
 
-        table.timestamp('created_at')
-            .defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+        table.timestamp("created_at")
+            .defaultTo(knex.raw("CURRENT_TIMESTAMP"))
             .notNullable();
 
-        table.integer('user_id')
+        table.integer("user_id")
             .notNullable()
-            .references('id')
-            .inTable('users')
-            .onUpdate('CASCADE')
-            .onDelete('CASCADE');
+            .references("id")
+            .inTable("users")
+            .onUpdate("CASCADE")
+            .onDelete("CASCADE");
     });
 }
 
 export async function down(knex: Knex) {    // Rollback
-    return knex.schema.dropTable('connections');
+    return knex.schema.dropTable("connections");
 }

@@ -1,6 +1,6 @@
-import supertest from 'supertest';
+import supertest from "supertest";
 
-import app from '../server';
+import app from "../server";
 
 const api = supertest(app);
 
@@ -9,8 +9,8 @@ describe("Testing ClassesController - Index - Missing Values", () => {
         await api
             .get("/classes")
             .query({ "time": "10:00", "subject": "Matemática"})
-            .expect(400)
+            .expect(400);
 
         done();
-    })
+    });
 });
